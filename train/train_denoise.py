@@ -44,8 +44,6 @@ from timm.utils import NativeScaler
 
 # from utils.loader import  get_training_data,get_validation_data
 
-
-
 ######### Logs dir ###########
 log_dir = os.path.join(opt.save_dir, 'denoising', opt.dataset, opt.arch+opt.env)
 if not os.path.exists(log_dir):
@@ -57,7 +55,12 @@ model_dir  = os.path.join(log_dir, 'models')
 utils.mkdir(result_dir)
 utils.mkdir(model_dir)
 
-# ######### Set Seeds ###########
+######## save options #########
+opt_dict = vars(opt)
+with open(f'{log_dir}/config.json', 'w') as f:
+    json.dump(opt_dict, f, ensure_ascii=False, indent=4)
+
+########### Set Seeds ###########
 random.seed(1234)
 np.random.seed(1234)
 torch.manual_seed(1234)
