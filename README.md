@@ -1,4 +1,4 @@
-# Uformer for Diffraction Denoising
+# Uformer for X-ray Diffraction Denoising
 
 ### Readme in Chinese: [click me](README_CN.pdf)
 
