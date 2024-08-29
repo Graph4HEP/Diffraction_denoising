@@ -14,6 +14,7 @@ pip install -r requirements.txt
 ```
 
 ## Data preparation 
+
 The example tar.gz data (already converted to the tiff format) is located at [here](example_data/)
 
 Unzip the tar.gz files by:
@@ -29,7 +30,7 @@ The LC folder contains the input noising data.
 
 The HC folder contains the target denoising data.
 
-To convert the .hdf5 file to .tiff format, run the command:
+If the images are stored in hdf5 format, and need to convert to .tiff format, run the command:
 ```bash
 cd data_preprocess
 python hdf5_to_tiff.py
