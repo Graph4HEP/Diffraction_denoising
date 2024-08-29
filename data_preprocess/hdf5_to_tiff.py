@@ -52,3 +52,8 @@ def convert_zenodo_hdf5_to_tif(file, save_folder):
     else:
         print('tif file already exists!')
 
+if __name__ == '__main__':
+    file = 'example_data/training_data.hdf5'
+    save_folder = '../example_data/training/'
+    convert_zenodo_hdf5_to_tif(file, save_folder)
+

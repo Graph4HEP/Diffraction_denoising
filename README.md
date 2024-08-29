@@ -51,6 +51,12 @@ argv3: number of samples. "full" is to test all the data in argv2.
 
 argv4: a multiplier factor to time the pixel value to have a better view. Suggestion value is 4.
 
+The tested results can be found [here](test/test.ipynb)
+
+## Pretrain Model
+
+The pretrain model use about 60,000 diffraction images to train. The model can be found [here](https://drive.google.com/file/d/1RYwrjvZk8Ky_JGnPM3gT1ekUgyb8QmX4/view?usp=drive_link)
+
 ## Computational Cost
 
 The original repo provide a simple script to calculate the flops by ourselves, a simple script has been added in `model.py`. You can change the configuration and run:
