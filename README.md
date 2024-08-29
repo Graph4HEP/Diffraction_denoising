@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ```
 
 ## Data preparation 
-The example tar.gz data is located at [here](example_data/)
+The example tar.gz data (already converted to the tiff format) is located at [here](example_data/)
 
 Unzip the tar.gz files by:
 ```bash
@@ -28,6 +28,12 @@ The training and validatation data both contains 2 folders (LC and HC).
 The LC folder contains the input noising data.
 
 The HC folder contains the target denoising data.
+
+To convert the .hdf5 file to .tiff format, run the command:
+```bash
+cd data_preprocess
+python hdf5_to_tiff.py
+```
 
 ## Training
 To train Uformer for denoising, you can begin the training by:
