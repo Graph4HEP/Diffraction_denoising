@@ -43,19 +43,18 @@ cd test
 python test.py argv1 argv2 argv3 argv4
 ```
 
+```python
 argv1: log dirs, which should contains the "models", "results"  folders and "config.json" file.
-
 argv2: data dirs, which should contains the "LC" and "HC" folders
-
 argv3: number of samples. "full" is to test all the data in argv2.
-
 argv4: a multiplier factor to time the pixel value to have a better view. Suggestion value is 4.
+```
 
-The tested results can be found [here](test/test.ipynb)
+The tested results can be found [here](test/test.ipynb).
 
 ## Pretrain Model
 
-The pretrain model use about 60,000 diffraction images to train. The model can be found [here](https://drive.google.com/file/d/1RYwrjvZk8Ky_JGnPM3gT1ekUgyb8QmX4/view?usp=drive_link)
+The pretrain model use about 60,000 diffraction images to train. The mode, training config and logs can be found [here](https://drive.google.com/file/d/1RYwrjvZk8Ky_JGnPM3gT1ekUgyb8QmX4/view?usp=drive_link).
 
 ## Computational Cost
 
