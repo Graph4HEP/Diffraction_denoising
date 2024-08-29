@@ -14,36 +14,45 @@ pip install -r requirements.txt
 ## Data preparation 
 The example tar.gz data is located at [here](example_data/)
 
-Then generate training patches for training by:
+Unzip the tar.gz files by:
 ```bash
 cd example_data
 tar -xvf training.tar.gz
 tar -xvf validation.tar.gz
 ```
 
+The training and validatation data both contains 2 folders (LC and HC). 
+
+The LC folder contains the input noising data.
+
+The HC folder contains the target denoising data.
+
 ## Training
-### Denoising
-To train Uformer, you can begin the training by:
+To train Uformer for denoising, you can begin the training by:
 
 ```sh
 sh script/train_denoise.sh
 ```
 
-## Evaluation
+The script already define the parameters used in the model.
+
+## Test
+To test the model, run the following commands:
+```bash
+cd test
+python test.py log_dirs data_dir_which_contains_LC_and_HC
+```
 
 ## Computational Cost
 
-We provide a simple script to calculate the flops by ourselves, a simple script has been added in `model.py`. You can change the configuration and run:
+The original repo provide a simple script to calculate the flops by ourselves, a simple script has been added in `model.py`. You can change the configuration and run:
 
 ```python
 python3 model.py
 ```
 
-> The manual calculation of GMacs in this repo differs slightly from the main paper, but they do not influence the conclusion. We will correct the paper later.
-
-
 ## Citation
-If you find this project useful in your research, please consider citing the original paper and our study:
+If you find this project useful in your research, please consider citing the original paper:
 
 ```
 @InProceedings{Wang_2022_CVPR,
@@ -56,3 +65,14 @@ If you find this project useful in your research, please consider citing the ori
 }
 ```
 
+and our study:
+```
+@misc{diffraction_denoising_github,
+  author = {Bingzhi, Li},
+  title = {Diffraction Denoising},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub Repository},
+  howpublished = {Accessed: \url{https://github.com/Graph4HEP/Diffraction_denoising}},
+}
+```
