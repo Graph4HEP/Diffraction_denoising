@@ -16,6 +16,16 @@ data_dir   = sys.argv[2]
 samples    = sys.argv[3]
 factor     = sys.argv[4]
 
+if(samples=='full'):
+    pass
+else:
+    try:
+        samples = int(samples)
+    except:
+        print('argv 3 should be an int number or string "full". It is the sample number to test the input data.')
+        sys.exit()
+
+
 try:
     factor = int(factor)
 except:
@@ -39,7 +49,7 @@ test_path_hc = f'{data_dir}/HC/'
 test_path_lc = f'{data_dir}/LC/'
 test_dataset_hc = get_test_data(test_path_hc)
 test_dataset_lc = get_test_data(test_path_lc)
-Nsample = len(test_dataset_lc) if samples=='full' else 100
+Nsample = len(test_dataset_lc) if samples=='full' else samples
 with torch.no_grad():
     for i in tqdm(range(Nsample)):
         img = test_dataset_lc[i][0].reshape(1,3,256,256).to('cuda')
