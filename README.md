@@ -1,5 +1,7 @@
 # Uformer for Diffraction Denoising
 
+### Readme in Chinese: [click me](README_CN.pdf)
+
 ## Modified form this repo: [[Uformer: A General U-Shaped Transformer for Image Restoration (CVPR 2022)]](https://github.com/ZhendongWang6/Uformer)
 
 ## Environmental setup
