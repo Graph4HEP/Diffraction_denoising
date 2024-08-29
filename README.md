@@ -40,8 +40,16 @@ The script already define the parameters used in the model.
 To test the model, run the following commands:
 ```bash
 cd test
-python test.py log_dirs data_dir_which_contains_LC_and_HC
+python test.py argv1 argv2 argv3 argv4
 ```
+
+argv1: log dirs, which should contains the "models", "results"  folders and "config.json" file.
+
+argv2: data dirs, which should contains the "LC" and "HC" folders
+
+argv3: number of samples. "full" is to test all the data in argv2.
+
+argv4: a multiplier factor to time the pixel value to have a better view. Suggestion value is 4.
 
 ## Computational Cost
 
