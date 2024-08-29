@@ -39,12 +39,12 @@ def compare_datasets(original_file, converted_file, dataset_name):
         conv_data = conv_fid[dataset_name]['data'][:]
 
         new = orig_data - conv_data
-        print(new.max())
-        print(new.min())
+        if(new.max() == new.min() and new.max()==0):
+            print('the 2 hdf5 files are the same')
+        else:
+            print('problem happened, please check the 2 hdf5 files to see if they are the same') 
 
-if __name__ == "__main__":
-    input_npz_files = ['training_data_high_count.npz', 'training_data_low_count.npz']  # 你的.npz文件列表
-    hdf5_output_file = 'converted_training_data.hdf5'  # 输出的HDF5文件名
+def convert(input_npz_files, hdf5_output_file):
     datasets = ['high_count', 'low_count']  # 数据集名称列表
 
     if os.path.exists(hdf5_output_file):
@@ -53,7 +53,20 @@ if __name__ == "__main__":
         convert_npz_to_hdf5(npz_file, hdf5_output_file, dataset)
         print(f'Converted {npz_file} to {hdf5_output_file} as {dataset}')
 
-    #original_hdf5_file = 'training_data.hdf5'
-    #for dataset in datasets:
-    #    compare_datasets(original_hdf5_file, hdf5_output_file, dataset)
+if __name__ == '__main__':
+    path = '../example_data'
+    train_npz = [f"{path}/training_data_high_count.npz", f'{path}/training_data_low_count.npz']
+    train_out = f'{path}/converted_training_data.hdf5'
+    val_npz   = [f'{path}/validation_data_high_count.npz', f'{path}/validation_data_low_count.npz']
+    val_out   = f'{path}/converted_validation_data.hdf5'
+    convert(train_npz, train_out)
+    convert(val_npz, val_out)
 
+    datasets = ['high_count', 'low_count'] 
+    original_hdf5_file = f'{path}/training_data.hdf5'
+    for dataset in datasets:
+        compare_datasets(original_hdf5_file, train_out, dataset)    
+
+    original_hdf5_file = f'{path}/validation_data.hdf5'
+    for dataset in datasets:
+        compare_datasets(original_hdf5_file, val_out, dataset)

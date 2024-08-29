@@ -22,9 +22,7 @@ def process_data(inputs, dataset_name):
             sparse.save_npz(f'{inputs[:-5]}_{dataset_name}.npz', data_sp)
     print(f'{dataset_name} save to the disk done, time used: {time.time()-st:.1f}s')
 
-if __name__ == "__main__":
-
-    inputs = sys.argv[1]
+def preprocess(inputs):
     print(inputs)
 
     datasets = ['low_count', 'high_count']
@@ -52,3 +50,6 @@ if __name__ == "__main__":
     sp_size  = (os.path.getsize(f'{inputs[:-5]}_{datasets[0]}.npz') + os.path.getsize(f'{inputs[:-5]}_{datasets[1]}.npz') ) / 1024 / 1024 #MB
     print(f'after the sparse process, the size of the file reduces about {raw_size/sp_size:.1f} times ({raw_size:.0f}MB ===> {sp_size:.0f}MB)')
 
+if __name__ == '__main__':
+    preprocess('../example_data/training_data.hdf5')
+    preprocess('../example_data/validation_data.hdf5')
