@@ -46,6 +46,8 @@ sh script/train_denoise.sh
 The script already define the parameters used in the model.
 
 ## Test
+
+### Script
 To test the model, run the following commands:
 ```bash
 cd test
@@ -60,6 +62,11 @@ argv4: a multiplier factor to time the pixel value to have a better view. Sugges
 ```
 
 The tested results can be found [here](test/test.ipynb).
+
+### Compared with CNN
+We also trained a IRUNet to denose the X-ray image. 
+
+The denoising results located at [here](CNN_model_comparison/test.ipynb)
 
 ## Pretrain Model
 
