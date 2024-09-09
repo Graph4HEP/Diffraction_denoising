@@ -73,3 +73,10 @@ with torch.no_grad():
         plt.title(f"sample {i}, left to right: lc, hc, model output, multiplier factor {factor}")
         plt.show()
         plt.savefig(f'{result_dir}/test_result_{i}.png')
+
+        pil_hc = Image.fromarray((test_dataset_hc[i][0][0]*255).numpy().astype(np.float32))
+        pil_lc = Image.fromarray((test_dataset_lc[i][0][0]*255).numpy().astype(np.float32))
+        pil_ou = Image.fromarray((out.numpy()/factor).astype(np.float32))
+        pil_hc.save(f'{result_dir}/{i}_hc.tif')
+        pil_lc.save(f'{result_dir}/{i}_lc.tif')
+        pil_ou.save(f'{result_dir}/{i}_out.tif')
