@@ -72,7 +72,7 @@ The CNN denoising results located at [here](CNN_model_comparison/test.ipynb)
 
 CNN denoising result
 
-![CNN](fig/CNN_denosing_result.png)
+![CNN](fig/CNN_denoising_result.png)
 
 Uformer denoising result
 
