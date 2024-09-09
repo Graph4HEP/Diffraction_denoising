@@ -61,12 +61,22 @@ argv3: number of samples. "full" is to test all the data in argv2.
 argv4: a multiplier factor to time the pixel value to have a better view. Suggestion value is 4.
 ```
 
-The tested results can be found [here](test/test.ipynb).
+The Uformer denoising results can be found [here](test/test.ipynb).
 
 ### Compared with CNN
 We also trained a IRUNet to denose the X-ray image. 
 
-The denoising results located at [here](CNN_model_comparison/test.ipynb)
+The CNN denoising results located at [here](CNN_model_comparison/test.ipynb)
+
+### Example Result
+
+CNN denoising result
+
+![CNN](fig/CNN_denosing_result.png)
+
+Uformer denoising result
+
+![Uformer](fig/Uformer_denoising_result.png)
 
 ## Pretrain Model
 
